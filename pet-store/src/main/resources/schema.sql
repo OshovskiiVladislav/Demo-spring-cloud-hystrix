@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS cats;
+CREATE TABLE cats
+(
+    id    BIGSERIAL PRIMARY KEY,
+    name  VARCHAR(255) NOT NULL,
+    breed VARCHAR(255) NOT NULL,
+    age   INTEGER      NOT NULL
+);
