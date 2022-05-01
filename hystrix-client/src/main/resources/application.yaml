@@ -1,0 +1,23 @@
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+spring:
+  application:
+    name: hystrix-client
+
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 12211
+
+eureka:
+  client:
+    serviceUrl.defaultZone: ${EUREKA_URI:http://localhost:8762/eureka}

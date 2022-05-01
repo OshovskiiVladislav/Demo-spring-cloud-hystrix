@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: pet-store
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/catdb
+    username: postgres
+    password: postgres
+    initialization-mode: ALWAYS
+
+  sql:
+    init:
+      mode: always
+
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: false
+
+server:
+  port: 19872
+
+eureka:
+  client:
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8762/eureka}
+
