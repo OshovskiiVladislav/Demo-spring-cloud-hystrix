@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient("pet-store")
+@FeignClient(value = "pet-store", fallback = CatFeignFallback.class)
 public interface CatClient {
     @GetMapping("/api/v1/cats/{id}")
     CatDto findCatById(@PathVariable(value = "id") Long id);

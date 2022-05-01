@@ -8,5 +8,5 @@ public interface HystrixController {
     String greeting();
     List<CatDto> findAllCats();
     CatDto findCatById(Long id);
-    String buyCatById(Long id);
+    void buyCatById(Long id);
 }
